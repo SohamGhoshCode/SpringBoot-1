@@ -18,7 +18,6 @@ public class MyPortfolio {
                 Leetcode Link</a></p>
                 """;
     }
-
     @GetMapping("/skills")
     public String skills() {
         return """
@@ -53,4 +52,5 @@ public class MyPortfolio {
                 </ul>
                 """;
     }
+
 }

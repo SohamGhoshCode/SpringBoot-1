@@ -4,6 +4,7 @@ import com.soham.demo.StudentServer.Entity.Student;
 import com.soham.demo.StudentServer.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Service
 public class StudentService {
@@ -29,5 +30,15 @@ public class StudentService {
 
         studentRepository.save(student);
         return student;
+    }
+
+    public Student getStudentById(int id) {
+        return studentRepository.findById(id).orElse(null);
+    }
+    public Student saveStudent(Student student){
+        return studentRepository.save(student);
+    }
+    public void deleteStudent(int id){
+        studentRepository.deleteById(id);
     }
 }

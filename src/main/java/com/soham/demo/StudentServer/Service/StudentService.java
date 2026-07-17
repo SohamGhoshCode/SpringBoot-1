@@ -1,5 +1,7 @@
-package com.soham.demo.StudentServer;
+package com.soham.demo.StudentServer.Service;
 
+import com.soham.demo.StudentServer.Entity.Student;
+import com.soham.demo.StudentServer.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

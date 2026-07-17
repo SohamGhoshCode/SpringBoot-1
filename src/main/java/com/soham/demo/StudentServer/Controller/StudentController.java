@@ -1,5 +1,7 @@
-package com.soham.demo.StudentServer;
+package com.soham.demo.StudentServer.Controller;
 
+import com.soham.demo.StudentServer.Entity.Student;
+import com.soham.demo.StudentServer.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

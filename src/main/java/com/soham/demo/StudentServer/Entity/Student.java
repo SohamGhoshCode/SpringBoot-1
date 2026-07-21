@@ -20,11 +20,15 @@ public class Student {
     private String name;
 
     @NotBlank(message = "Department cannot be empty")
-    @Size(min = 2, max = 50, message = "Department must be between 2 and 50 characters")
+    @Size(min = 2, max = 50)
     private String department;
 
-    @Min(value = 1, message = "Age must be greater than 0")
+    @Min(value = 1)
     private int age;
+
+    @NotBlank(message = "Email cannot be empty")
+    @Column(unique = true, nullable = false)
+    private String email;
 
     @CreationTimestamp
     @Column(updatable = false)
@@ -33,51 +37,23 @@ public class Student {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    public int getId() {
-        return id;
-    }
+    // getters & setters
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getDepartment() { return department; }
+    public void setDepartment(String department) { this.department = department; }
 
-    public String getDepartment() {
-        return department;
-    }
+    public int getAge() { return age; }
+    public void setAge(int age) { this.age = age; }
 
-    public void setDepartment(String department) {
-        this.department = department;
-    }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public LocalDateTime getUpdatedAt() { return updatedAt; }
 }
